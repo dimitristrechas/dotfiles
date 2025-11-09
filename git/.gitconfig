@@ -1,0 +1,32 @@
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+[core]
+	editor = code --wait --reuse-window
+	excludesfile = /Users/dtrechas/.gitignore_global
+	autocrlf = input
+[pull]
+	rebase = true
+[sequence]
+	editor = code --wait --reuse-window
+[color]
+	ui = auto
+	diff=auto
+	status=auto
+	branch=auto
+[push]
+	autoSetupRemote = true
+[alias]
+	stashpull = "!git diff --quiet && git fetch && git pull || (git stash && git fetch && git pull && git stash pop)"
+	fix = "commit --fixup"
+	fere = "!f() { git fetch; git rebase -i origin/$1 --autosquash; }; f"
+	recent = "!git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | head -n 5"
+[credential]
+	helper = osxkeychain
+[rerere]
+	enabled = true
+[user]
+	name = Dimitrios \"Jim\" Trechas
+	email = trechas.dimitrios@telekom.com
