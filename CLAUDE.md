@@ -9,6 +9,7 @@ Dotfiles organized by tool with each in its own subdirectory:
 - `git/.gitconfig` - Git config with aliases, pull.rebase, push.autoSetupRemote
 - `starship/.config/starship.toml` - Starship prompt (Gruvbox Dark theme)
 - `ghostty/.config/ghostty/config` - Ghostty terminal config
+- `npm/.npmrc` - npm config with save-exact, engine-strict, audit settings
 - `zsh/.zshrc` - Zsh shell config (currently empty)
 
 ## Git Configuration
