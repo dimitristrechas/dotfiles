@@ -5,7 +5,6 @@
 	smudge = git-lfs smudge -- %f
 [core]
 	editor = code --wait --reuse-window
-	excludesfile = /Users/dtrechas/.gitignore_global
 	autocrlf = input
 [pull]
 	rebase = true
@@ -24,6 +23,8 @@
 	fere = "!f() { git fetch; git rebase -i origin/$1 --autosquash; }; f"
 	recent = "!git reflog | egrep -io 'moving from ([^[:space:]]+)' | awk '{ print $3 }' | awk ' !x[$0]++' | egrep -v '^[a-f0-9]{40}$' | head -n 5"
 [credential]
+	helper = libsecret
 	helper = osxkeychain
+	helper = cache --timeout=31536000
 [rerere]
 	enabled = true
