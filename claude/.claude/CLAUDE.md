@@ -11,6 +11,7 @@
 ## Code
 
 - Omit obvious comments. Code should self-document.
+- If repository has package.json always update the version. Decide based on your changes if it is a patch, minor or major update.
 
 ## Git
 
